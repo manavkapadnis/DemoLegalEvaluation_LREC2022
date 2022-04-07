@@ -12,6 +12,7 @@ import seaborn as sns
 import regex as re
 from io import StringIO
 import letsum
+import webbrowser
 import letsum_test
 from nltk.tokenize import word_tokenize, sent_tokenize
 import transformers
@@ -477,8 +478,23 @@ def give_final_summary(summary):
 	text = re.sub(r'[^\w\s.,]', ' ', summary)
 	return text
 
+st.sidebar.subheader('About the Authors:')
+st.sidebar.markdown('Manav Nitin Kapadnis')
+st.sidebar.markdown('Ankan Mullick')
+st.sidebar.markdown('Abhilash Nandy')
+st.sidebar.markdown('Sohan Patnaik')
+st.sidebar.markdown('R Raghav')
+st.sidebar.markdown('Roshni Kar')
+st.sidebar.markdown('IIT Kharagpur')
+
+github_url = 'https://github.com/manavkapadnis/LegalEvaluation_LREC2022'
+if st.sidebar.button('Paper Code'):
+    webbrowser.open_new_tab(github_url)
+
 
 st.title("An Evaluation Framework for Legal Document Summarization")
+st.subheader("Accepted in the Language Resources and Evaluation Conference 2022")
+
 # markdown in streamlit
 st.markdown('''
 This demonstration can perform three different tasks:\n
